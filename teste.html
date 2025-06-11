@@ -1,0 +1,1464 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arraiá da Morlan 2025 - Correio do Bem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            /* Novo padrão de fundo estilo festa junina */
+            background-image: 
+                linear-gradient(45deg, #f8f9fa 25%, transparent 25%), 
+                linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #f8f9fa 75%), 
+                linear-gradient(-45deg, transparent 75%, #f8f9fa 75%);
+            background-size: 20px 20px;
+            background-color: #F0F7FF;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        /* Elementos decorativos de fundo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(#0056A4 1px, transparent 1px),
+                radial-gradient(#3D85C6 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            opacity: 0.15;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .festa-title {
+            font-family: 'Pacifico', cursive;
+        }
+        .countdown-item {
+            background: linear-gradient(135deg, #3D85C6 0%, #0056A4 100%);
+            box-shadow: 0 10px 25px rgba(0, 86, 164, 0.2);
+            border-radius: 16px;
+        }
+        .message-card {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 5px solid transparent;
+        }
+        .message-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3D85C6 0%, #0056A4 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 86, 164, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 86, 164, 0.4);
+        }
+        .btn-secondary {
+            background: linear-gradient(135deg, #3D85C6 0%, #0056A4 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 86, 164, 0.3);
+        }
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 86, 164, 0.4);
+        }
+        .festive-border {
+            border: 2px solid rgba(61, 133, 198, 0.3);
+            border-radius: 16px;
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .banner {
+            background: linear-gradient(135deg, #3D85C6 0%, #0056A4 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+        .flag-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .flag {
+            width: 30px;
+            height: 40px;
+            margin: 0 5px;
+            position: relative;
+            transform-origin: top center;
+            animation: swing 3s ease-in-out infinite alternate;
+        }
+        .flag:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+        .flag:nth-child(even) {
+            animation-delay: 0.3s;
+        }
+        .flag::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+        }
+        
+        /* Cores mais vibrantes para as bandeirinhas */
+        .flag-blue::before { background-color: #1E88E5; }
+        .flag-green::before { background-color: #43A047; }
+        .flag-yellow::before { background-color: #FDD835; }
+        .flag-red::before { background-color: #E53935; }
+        .flag-orange::before { background-color: #FB8C00; }
+        .flag-purple::before { background-color: #8E24AA; }
+        .flag-pink::before { background-color: #EC407A; }
+        .flag-teal::before { background-color: #00ACC1; }
+        
+        .form-container {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .form-header {
+            background: linear-gradient(135deg, #3D85C6 0%, #0056A4 100%);
+            padding: 1.5rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .form-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+        
+        .form-body {
+            padding: 2rem;
+        }
+        
+        .custom-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%230056A4'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1rem;
+        }
+        
+        .template-btn {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .template-btn:hover {
+            border-color: #0056A4;
+            background-color: #E6F0FF;
+        }
+        
+        @keyframes swing {
+            0% { transform: rotate(5deg); }
+            100% { transform: rotate(-5deg); }
+        }
+        
+        .messages-container {
+            position: relative;
+        }
+        
+        .messages-header {
+            background: linear-gradient(135deg, #3D85C6 0%, #0056A4 100%);
+            padding: 1.5rem;
+            color: white;
+            border-radius: 16px 16px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .messages-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+        
+        .messages-body {
+            background-color: white;
+            border-radius: 0 0 16px 16px;
+            padding: 2rem;
+        }
+        
+        .search-container {
+            position: relative;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9CA3AF;
+            pointer-events: none; /* Garante que o ícone não interfira com o input */
+            z-index: 10; /* Garante que o ícone fique acima do input */
+        }
+        
+        .search-input {
+            padding-left: 2.5rem; /* Espaço suficiente para a lupa */
+        }
+        
+        .stats-card {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .stats-header {
+            padding: 1.5rem;
+            color: white;
+            position: relative;
+        }
+        
+        .stats-header.sent {
+            background: linear-gradient(135deg, #3D85C6 0%, #0056A4 100%);
+        }
+        
+        .stats-header.received {
+            background: linear-gradient(135deg, #73B2E8 0%, #0056A4 100%);
+        }
+        
+        .stats-body {
+            padding: 1.5rem;
+        }
+        
+        .stats-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .stats-item:last-child {
+            border-bottom: none;
+        }
+        
+        .stats-rank {
+            font-weight: 600;
+            color: #4B5563;
+        }
+        
+        .stats-count {
+            font-weight: 600;
+            color: #0056A4;
+        }
+        
+        .stats-count.received {
+            color: #3D85C6;
+        }
+        
+        .highlight {
+            background-color: #E6F0FF;
+        }
+        
+        /* Elementos decorativos adicionais */
+        .lantern {
+            position: fixed;
+            width: 40px;
+            height: 60px;
+            background-color: #0056A4;
+            border-radius: 50% 50% 5px 5px;
+            box-shadow: 0 0 20px rgba(0, 86, 164, 0.6);
+            z-index: -1;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .lantern::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            width: 10px;
+            height: 10px;
+            background-color: #73B2E8;
+            border-radius: 50%;
+        }
+        
+        .lantern:nth-child(1) {
+            top: 15%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .lantern:nth-child(2) {
+            top: 25%;
+            right: 5%;
+            background-color: #3D85C6;
+            animation-delay: 1s;
+        }
+        
+        .lantern:nth-child(3) {
+            bottom: 15%;
+            left: 8%;
+            background-color: #73B2E8;
+            animation-delay: 2s;
+        }
+        
+        .lantern:nth-child(4) {
+            bottom: 25%;
+            right: 8%;
+            background-color: #003366;
+            animation-delay: 3s;
+        }
+        
+        /* Cores mais vibrantes para as lanternas */
+        .lantern:nth-child(1) {
+            background-color: #E53935; /* Vermelho */
+        }
+        
+        .lantern:nth-child(2) {
+            background-color: #43A047; /* Verde */
+        }
+        
+        .lantern:nth-child(3) {
+            background-color: #FDD835; /* Amarelo */
+        }
+        
+        .lantern:nth-child(4) {
+            background-color: #1E88E5; /* Azul */
+        }
+        
+        /* Adicionar mais lanternas coloridas */
+        .lantern:nth-child(5) {
+            top: 40%;
+            left: 15%;
+            background-color: #8E24AA; /* Roxo */
+            animation-delay: 1.5s;
+        }
+        
+        .lantern:nth-child(6) {
+            top: 60%;
+            right: 15%;
+            background-color: #FB8C00; /* Laranja */
+            animation-delay: 2.5s;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Estilos para a navegação */
+        .nav-link {
+            position: relative;
+            color: white;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        /* Estilos para o contador de mensagens */
+        .message-counter {
+            background: linear-gradient(135deg, #73B2E8 0%, #0056A4 100%);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 86, 164, 0.2);
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message-counter::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+        
+        .counter-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 0.5rem;
+        }
+        
+        .counter-text {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 600;
+        }
+        
+        /* Estilos para navegação fixa no topo */
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: linear-gradient(135deg, #3D85C6 0%, #0056A4 100%);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #3D85C6 0%, #0056A4 100%);
+                padding: 1rem;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Estilos para a seção de eventos */
+        .events-section {
+            margin-bottom: 2rem;
+        }
+        
+        .event-card {
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border-left: 5px solid #3D85C6;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .event-header {
+            background: linear-gradient(135deg, #3D85C6 0%, #0056A4 100%);
+            padding: 1rem;
+            color: white;
+        }
+        
+        .event-body {
+            padding: 1.5rem;
+        }
+        
+        .event-date {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .event-date-icon {
+            background-color: #E6F0FF;
+            color: #0056A4;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .event-time {
+            display: flex;
+            align-items: center;
+        }
+        
+        .event-time-icon {
+            background-color: #E6F0FF;
+            color: #3D85C6;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        /* Tamanho da fonte da mensagem reduzido ainda mais */
+        .message-text {
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+        
+        /* Estilo para as bandeirinhas do fundo */
+        .background-flags {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -2;
+            pointer-events: none;
+        }
+        
+        .background-flag {
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            opacity: 0.1;
+        }
+        
+        .background-flag::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+        }
+        
+        /* Cores para as bandeirinhas do fundo */
+        .bg-flag-1::before { background-color: #E53935; }
+        .bg-flag-2::before { background-color: #43A047; }
+        .bg-flag-3::before { background-color: #FDD835; }
+        .bg-flag-4::before { background-color: #1E88E5; }
+        .bg-flag-5::before { background-color: #8E24AA; }
+        .bg-flag-6::before { background-color: #FB8C00; }
+        .bg-flag-7::before { background-color: #EC407A; }
+        .bg-flag-8::before { background-color: #00ACC1; }
+    </style>
+</head>
+<body>
+    <!-- Elementos decorativos de fundo -->
+    <div class="lantern"></div>
+    <div class="lantern"></div>
+    <div class="lantern"></div>
+    <div class="lantern"></div>
+    <div class="lantern"></div>
+    <div class="lantern"></div>
+    
+    <!-- Bandeirinhas de fundo -->
+    <div class="background-flags" id="backgroundFlags"></div>
+    
+    <div class="min-h-screen flex flex-col">
+        <!-- Header Banner -->
+        <header class="banner text-white py-8 px-6 relative">
+            <div class="flag-container">
+                <div class="flag flag-red"></div>
+                <div class="flag flag-green"></div>
+                <div class="flag flag-yellow"></div>
+                <div class="flag flag-blue"></div>
+                <div class="flag flag-orange"></div>
+                <div class="flag flag-purple"></div>
+                <div class="flag flag-pink"></div>
+                <div class="flag flag-teal"></div>
+                <div class="flag flag-red"></div>
+                <div class="flag flag-green"></div>
+                <div class="flag flag-yellow"></div>
+                <div class="flag flag-blue"></div>
+            </div>
+            <div class="container mx-auto text-center pt-10">
+                <h1 class="festa-title text-5xl md:text-7xl mb-3">Arraiá da Morlan 2025</h1>
+                <p class="text-xl md:text-2xl font-medium">Correio do Bem está de volta!</p>
+            </div>
+        </header>
+        
+        <!-- Navegação -->
+        <nav class="nav-sticky">
+            <div class="container mx-auto nav-container">
+                <div class="text-white font-bold text-xl festa-title">Arraiá 2025</div>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="#eventos" class="nav-link">Eventos</a>
+                    <a href="#contador" class="nav-link">Contagem</a>
+                    <a href="#sobre" class="nav-link">Sobre</a>
+                    <a href="#enviar" class="nav-link">Mensagem</a>
+                    <a href="#mensagens" class="nav-link">Mural</a>
+                    <a href="#estatisticas" class="nav-link">Estatísticas</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-12">
+            <!-- Eventos Section - Nova seção -->
+            <section id="eventos" class="mb-16 events-section">
+                <h2 class="text-center text-3xl md:text-4xl font-bold mb-8">Programação do Arraiá</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Evento 1: Quermesse e Bingo -->
+                    <div class="event-card">
+                        <div class="event-header">
+                            <h3 class="text-xl font-bold">Quermesse e Bingo</h3>
+                        </div>
+                        <div class="event-body">
+                            <div class="event-date">
+                                <div class="event-date-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Sábado</p>
+                                    <p class="text-lg font-bold">28 de Junho de 2025</p>
+                                </div>
+                            </div>
+                            <div class="event-time">
+                                <div class="event-time-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Horário</p>
+                                    <p class="text-lg font-bold">18h00 às 24h00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Evento 2: Festa Junina -->
+                    <div class="event-card">
+                        <div class="event-header">
+                            <h3 class="text-xl font-bold">Festa Junina</h3>
+                        </div>
+                        <div class="event-body">
+                            <div class="event-date">
+                                <div class="event-date-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Domingo</p>
+                                    <p class="text-lg font-bold">29 de Junho de 2025</p>
+                                </div>
+                            </div>
+                            <div class="event-time">
+                                <div class="event-time-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Horário</p>
+                                    <p class="text-lg font-bold">12h00 às 18h30</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Countdown Section -->
+            <section class="mb-16" id="contador">
+                <h2 class="text-center text-3xl md:text-4xl font-bold mb-8">Contagem regressiva para as Festas</h2>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="countdown-item w-24 h-24 md:w-32 md:h-32 flex flex-col items-center justify-center text-white">
+                        <span id="days" class="text-3xl md:text-5xl font-bold">00</span>
+                        <span class="text-sm md:text-base">Dias</span>
+                    </div>
+                    <div class="countdown-item w-24 h-24 md:w-32 md:h-32 flex flex-col items-center justify-center text-white">
+                        <span id="hours" class="text-3xl md:text-5xl font-bold">00</span>
+                        <span class="text-sm md:text-base">Horas</span>
+                    </div>
+                    <div class="countdown-item w-24 h-24 md:w-32 md:h-32 flex flex-col items-center justify-center text-white">
+                        <span id="minutes" class="text-3xl md:text-5xl font-bold">00</span>
+                        <span class="text-sm md:text-base">Minutos</span>
+                    </div>
+                    <div class="countdown-item w-24 h-24 md:w-32 md:h-32 flex flex-col items-center justify-center text-white">
+                        <span id="seconds" class="text-3xl md:text-5xl font-bold">00</span>
+                        <span class="text-sm md:text-base">Segundos</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Contador de Mensagens -->
+            <section class="mb-16">
+                <div class="message-counter">
+                    <div class="counter-number" id="totalMessages">0</div>
+                    <div class="counter-text">Correios do Bem enviados</div>
+                </div>
+            </section>
+
+            <!-- Introduction Section -->
+            <section id="sobre" class="max-w-3xl mx-auto mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Vamos espalhar alegria novamente!</h2>
+                <p class="text-lg mb-8">Sabemos que elogiar o outro faz um bem danado e não custa nadica de nada! Então tira uns segundinhos aí e manda um <span class="font-bold text-blue-600">CORREIO DO BEM</span>. Um elogio pode melhorar o dia ou até mesmo a vida de alguém!</p>
+                
+                <div class="festive-border p-8">
+                    <h3 class="text-2xl font-bold mb-6">Veja como participar:</h3>
+                    <ol class="text-left list-decimal list-inside space-y-3">
+                        <li>Mande seu recado aqui neste site. Capriche no conteúdo! Escolha uma das mensagens prontas ou crie a sua própria</li>
+                        <li>Lembre-se: a mensagem deve ser de caráter corporativo, respeitando a cultura e os valores da empresa</li>
+                        <li>Informe seu nome e setor, assim como o da pessoa que está recebendo</li>
+                    </ol>
+                    
+                    <div class="mt-8 p-6 bg-blue-50 rounded-xl">
+                        <h4 class="font-bold text-xl mb-4">IMPORTANTE:</h4>
+                        <ul class="text-left list-disc list-inside space-y-3">
+                            <li>Fique à vontade para mandar quantos cartões virtuais você quiser!</li>
+                            <li>Os cartões deverão ser apenas para colaboradores da Morlan</li>
+                            <li>Não se esqueça de colocar seu nome completo e o do seu colega</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Form Section -->
+            <section id="enviar" class="max-w-3xl mx-auto mb-16 form-container">
+                <div class="form-header">
+                    <h2 class="text-2xl md:text-3xl font-bold text-center">Envie seu Correio do Bem</h2>
+                </div>
+                
+                <div class="form-body">
+                    <!-- Formulário usando fetch API para enviar os dados -->
+                    <form id="messageForm" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="seuNomeCompleto" class="block text-sm font-medium text-gray-700 mb-2">Seu Nome Completo</label>
+                                <input type="text" id="seuNomeCompleto" name="seuNomeCompleto" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 shadow-sm">
+                            </div>
+                            <div>
+                                <label for="seuSetor" class="block text-sm font-medium text-gray-700 mb-2">Seu Setor</label>
+                                <select id="seuSetor" name="seuSetor" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 shadow-sm custom-select">
+                                    <option value="" disabled selected>Selecione seu setor</option>
+                                    <option value="Almoxarifado">Almoxarifado</option>
+                                    <option value="Compras">Compras</option>
+                                    <option value="Comunicação Interna">Comunicação Interna</option>
+                                    <option value="Contabilidade">Contabilidade</option>
+                                    <option value="Controle de Qualidade">Controle de Qualidade</option>
+                                    <option value="Credito e Cobrança">Credito e Cobrança</option>
+                                    <option value="CredMorlan">CredMorlan</option>
+                                    <option value="Custos">Custos</option>
+                                    <option value="Departamento Médico">Departamento Médico</option>
+                                    <option value="Enfermaria">Enfermaria</option>
+                                    <option value="Engenharia de Processos">Engenharia de Processos</option>
+                                    <option value="Exportação">Exportação</option>
+                                    <option value="Fábrica">Fábrica</option>
+                                    <option value="Faturamento">Faturamento</option>
+                                    <option value="Financeiro">Financeiro</option>
+                                    <option value="Fiscal">Fiscal</option>
+                                    <option value="Laboratório">Laboratório</option>
+                                    <option value="Manutenções">Manutenções</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="PCP">PCP</option>
+                                    <option value="RH">RH</option>
+                                    <option value="SESMT">SESMT</option>
+                                    <option value="SGQ">SGQ</option>
+                                    <option value="TI">TI</option>
+                                    <option value="Transporte">Transporte</option>
+                                    <option value="Vendas">Vendas</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nomeColega" class="block text-sm font-medium text-gray-700 mb-2">Nome do Colega</label>
+                                <input type="text" id="nomeColega" name="nomeColega" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 shadow-sm">
+                            </div>
+                            <div>
+                                <label for="setorColega" class="block text-sm font-medium text-gray-700 mb-2">Setor do Colega</label>
+                                <select id="setorColega" name="setorColega" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 shadow-sm custom-select">
+                                    <option value="" disabled selected>Selecione o setor do colega</option>
+                                    <option value="Almoxarifado">Almoxarifado</option>
+                                    <option value="Compras">Compras</option>
+                                    <option value="Comunicação Interna">Comunicação Interna</option>
+                                    <option value="Contabilidade">Contabilidade</option>
+                                    <option value="Controle de Qualidade">Controle de Qualidade</option>
+                                    <option value="Credito e Cobrança">Credito e Cobrança</option>
+                                    <option value="CredMorlan">CredMorlan</option>
+                                    <option value="Custos">Custos</option>
+                                    <option value="Departamento Médico">Departamento Médico</option>
+                                    <option value="Enfermaria">Enfermaria</option>
+                                    <option value="Engenharia de Processos">Engenharia de Processos</option>
+                                    <option value="Exportação">Exportação</option>
+                                    <option value="Fábrica">Fábrica</option>
+                                    <option value="Faturamento">Faturamento</option>
+                                    <option value="Financeiro">Financeiro</option>
+                                    <option value="Fiscal">Fiscal</option>
+                                    <option value="Laboratório">Laboratório</option>
+                                    <option value="Manutenções">Manutenções</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="PCP">PCP</option>
+                                    <option value="RH">RH</option>
+                                    <option value="SESMT">SESMT</option>
+                                    <option value="SGQ">SGQ</option>
+                                    <option value="TI">TI</option>
+                                    <option value="Transporte">Transporte</option>
+                                    <option value="Vendas">Vendas</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Escolha uma mensagem pronta ou escreva a sua</label>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+                                <button type="button" class="template-btn px-4 py-3 bg-blue-50 text-blue-800 rounded-xl hover:bg-blue-100 transition-colors text-sm">Parabéns pelo excelente trabalho!</button>
+                                <button type="button" class="template-btn px-4 py-3 bg-blue-50 text-blue-800 rounded-xl hover:bg-blue-100 transition-colors text-sm">Sua dedicação inspira toda a equipe!</button>
+                                <button type="button" class="template-btn px-4 py-3 bg-blue-50 text-blue-800 rounded-xl hover:bg-blue-100 transition-colors text-sm">Obrigado por sempre ajudar quando preciso!</button>
+                                <button type="button" class="template-btn px-4 py-3 bg-blue-50 text-blue-800 rounded-xl hover:bg-blue-100 transition-colors text-sm">Seu profissionalismo faz a diferença!</button>
+                            </div>
+                            <textarea id="mensagem" name="mensagem" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 shadow-sm" placeholder="Escreva sua mensagem aqui..."></textarea>
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <button type="submit" class="btn-primary px-8 py-4 text-white font-medium rounded-xl text-lg">Enviar Correio do Bem</button>
+                        </div>
+                    </form>
+                    
+                    <div id="formStatus" class="mt-6 text-center hidden"></div>
+                </div>
+            </section>
+
+            <!-- Messages Section -->
+            <section id="mensagens" class="max-w-5xl mx-auto messages-container mb-16">
+                <div class="messages-header">
+                    <h2 class="text-2xl md:text-3xl font-bold text-center">Mural de Mensagens</h2>
+                </div>
+                
+                <div class="messages-body">
+                    <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+                        <button id="loadMessages" class="btn-secondary px-6 py-3 text-white font-medium rounded-xl">Atualizar Mensagens</button>
+                        
+                        <div class="search-container w-full md:w-64">
+                            <div class="search-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </div>
+                            <input type="text" id="searchInput" placeholder="Buscar por nome..." class="search-input w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-blue-500 focus:border-blue-500 shadow-sm">
+                        </div>
+                    </div>
+                    
+                    <div id="messagesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Messages will be loaded here -->
+                    </div>
+                    
+                    <div id="loadingMessages" class="text-center py-8 hidden">
+                        <div class="inline-block animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-blue-500"></div>
+                        <p class="mt-3 text-lg">Carregando mensagens...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Arraiá dos Gentis Section -->
+            <section id="estatisticas" class="max-w-5xl mx-auto mb-16">
+                <h2 class="text-center text-3xl md:text-4xl font-bold mb-8 festa-title">Arraiá dos Gentis</h2>
+                <p class="text-center text-lg mb-8">Confira quais setores estão espalhando mais gentileza pela Morlan!</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Setores que mais enviaram -->
+                    <div class="stats-card">
+                        <div class="stats-header sent">
+                            <h3 class="text-xl font-bold">🎁 Setores que mais enviaram</h3>
+                        </div>
+                        <div class="stats-body" id="topSenderSectors">
+                            <div class="stats-item">
+                                <span class="stats-rank">Carregando estatísticas...</span>
+                                <span class="stats-count">-</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Setores que mais receberam -->
+                    <div class="stats-card">
+                        <div class="stats-header received">
+                            <h3 class="text-xl font-bold">🏆 Setores que mais receberam</h3>
+                        </div>
+                        <div class="stats-body" id="topReceiverSectors">
+                            <div class="stats-item">
+                                <span class="stats-rank">Carregando estatísticas...</span>
+                                <span class="stats-count received">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+     <!-- Seção de Sorteio - ATUALIZADA -->
+            <section id="sorteio" class="max-w-3xl mx-auto mb-16 prize-section">
+                <div class="prize-header">
+                    <div class="prize-icon">🎁</div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2 text-center">Sorteio de Prêmios</h2>
+                    <p class="text-xl">Participe e concorra a prêmios surpresa!</p>
+                </div>
+                
+                <div class="prize-body">
+                    <h3 class="text-2xl font-bold mb-6 text-center">10 Prêmios Surpresa</h3>
+                    
+                    <div class="space-y-6">
+                        <p class="text-lg text-center mb-8">
+                            Todos os colaboradores que enviarem pelo menos uma mensagem no Correio do Bem 
+                            estarão automaticamente participando do sorteio de 10 prêmios surpresa!
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="prize-rule">
+                                <div class="prize-rule-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Participação Única</h4>
+                                    <p>Cada colaborador participará apenas uma vez do sorteio, independentemente da quantidade de mensagens enviadas.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="prize-rule">
+                                <div class="prize-rule-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Como Participar</h4>
+                                    <p>Basta enviar pelo menos uma mensagem para um colega através do Correio do Bem. Quanto mais mensagens você enviar, mais você espalha gentileza!</p>
+                                </div>
+                            </div>
+                            
+                            <div class="prize-rule">
+                                <div class="prize-rule-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Data do Sorteio</h4>
+                                    <p>O sorteio será realizado pela comissão do Correio do Bem em parceria com diversos colaboradores aleatórios na sexta-feira, dia 27 de junho de 2025, até as 18h00.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-400">
+                            <h4 class="font-bold text-lg mb-2">Importante:</h4>
+                            <p>Envie suas mensagens até o dia 26 de junho de 2025 às 18h00 para participar do sorteio. Não perca essa oportunidade de espalhar gentileza e ainda concorrer a prêmios!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-blue-800 text-white py-8">
+            <div class="container mx-auto px-4 text-center">
+                <p class="text-lg">© 2025 Arraiá da Morlan - Correio do Bem</p>
+                <div class="mt-4 flex justify-center space-x-4">
+                    <div class="flag flag-red"></div>
+                    <div class="flag flag-green"></div>
+                    <div class="flag flag-yellow"></div>
+                    <div class="flag flag-blue"></div>
+                    <div class="flag flag-orange"></div>
+                    <div class="flag flag-purple"></div>
+                    <div class="flag flag-pink"></div>
+                    <div class="flag flag-teal"></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Variável global para armazenar todas as mensagens
+        let allMessages = [];
+        
+        // Criar bandeirinhas de fundo
+        function createBackgroundFlags() {
+            const backgroundFlags = document.getElementById('backgroundFlags');
+            const flagClasses = ['bg-flag-1', 'bg-flag-2', 'bg-flag-3', 'bg-flag-4', 'bg-flag-5', 'bg-flag-6', 'bg-flag-7', 'bg-flag-8'];
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            
+            // Criar 30 bandeirinhas aleatórias no fundo
+            for (let i = 0; i < 30; i++) {
+                const flag = document.createElement('div');
+                flag.className = `background-flag ${flagClasses[Math.floor(Math.random() * flagClasses.length)]}`;
+                
+                // Posição aleatória
+                const left = Math.random() * windowWidth;
+                const top = Math.random() * windowHeight;
+                
+                flag.style.left = `${left}px`;
+                flag.style.top = `${top}px`;
+                
+                backgroundFlags.appendChild(flag);
+            }
+        }
+        
+        // Countdown Timer - Atualizado para 28 de junho de 2025
+        function updateCountdown() {
+            const eventDate = new Date('June 28, 2025 18:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+        
+        const countdownTimer = setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Message Template Buttons
+        document.querySelectorAll('.template-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.getElementById('mensagem').value = this.textContent;
+            });
+        });
+        
+        // URL do Google Apps Script
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzzWQ183xU0sm-Av0FudEQqGsrTDUQytLNRgNvYL03f6Ql1cuSt1oxtlUqqHHZ3Avke/exec';
+        
+        // Função para carregar mensagens do servidor
+        function loadMessages() {
+            const messagesContainer = document.getElementById('messagesContainer');
+            const loadingMessages = document.getElementById('loadingMessages');
+            
+            loadingMessages.classList.remove('hidden');
+            messagesContainer.innerHTML = '';
+            
+            // Fazer uma solicitação para obter as mensagens
+            fetch(`${scriptURL}?action=getMessages`)
+                .then(response => response.text())
+                .then(text => {
+                    try {
+                        // Tentar analisar a resposta como JSON
+                        const data = JSON.parse(text);
+                        loadingMessages.classList.add('hidden');
+                        
+                        // Armazenar todas as mensagens globalmente
+                        allMessages = data || [];
+                        
+                        // Atualizar o contador de mensagens
+                        updateMessageCounter(allMessages.length);
+                        
+                        displayMessages(allMessages);
+                        updateStatistics(allMessages);
+                        
+                    } catch (e) {
+                        loadingMessages.classList.add('hidden');
+                        messagesContainer.innerHTML = '<div class="col-span-full text-center py-8 text-lg text-red-600">Erro ao processar as mensagens. Por favor, tente novamente.</div>';
+                        console.error('Erro ao analisar JSON:', e);
+                    }
+                })
+                .catch(error => {
+                    loadingMessages.classList.add('hidden');
+                    messagesContainer.innerHTML = '<div class="col-span-full text-center py-8 text-lg text-red-600">Erro ao carregar mensagens. Por favor, tente novamente.</div>';
+                    console.error('Erro:', error);
+                });
+        }
+        
+        // Função para atualizar o contador de mensagens
+        function updateMessageCounter(count) {
+            const counterElement = document.getElementById('totalMessages');
+            
+            // Animação de contagem
+            const duration = 2000; // 2 segundos
+            const startTime = performance.now();
+            const startValue = parseInt(counterElement.textContent) || 0;
+            const endValue = count;
+            
+            function updateCounter(currentTime) {
+                const elapsedTime = currentTime - startTime;
+                
+                if (elapsedTime < duration) {
+                    const progress = elapsedTime / duration;
+                    const currentValue = Math.floor(startValue + progress * (endValue - startValue));
+                    counterElement.textContent = currentValue;
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counterElement.textContent = endValue;
+                }
+            }
+            
+            requestAnimationFrame(updateCounter);
+        }
+        
+        // Função para exibir mensagens
+        function displayMessages(messages) {
+            const messagesContainer = document.getElementById('messagesContainer');
+            messagesContainer.innerHTML = '';
+            
+            if (messages && messages.length > 0) {
+                messages.forEach(message => {
+                    const messageCard = document.createElement('div');
+                    messageCard.className = 'message-card p-6';
+                    
+                    const randomColor = getRandomColor();
+                    messageCard.style.borderLeft = `5px solid ${randomColor}`;
+                    
+                    messageCard.innerHTML = `
+                        <div class="mb-4">
+                            <p class="message-text font-medium">${escapeHtml(message.mensagem)}</p>
+                        </div>
+                        <div class="flex flex-col space-y-2">
+                            <div class="bg-gray-50 p-3 rounded-lg">
+                                <p class="text-sm"><span class="font-semibold">Para:</span> ${escapeHtml(message.nomeColega)}</p>
+                                <p class="text-sm"><span class="font-semibold">Setor:</span> ${escapeHtml(message.setorColega)}</p>
+                            </div>
+                            <div class="bg-blue-50 p-3 rounded-lg">
+                                <p class="text-sm"><span class="font-semibold">De:</span> ${escapeHtml(message.seuNomeCompleto)}</p>
+                                <p class="text-sm"><span class="font-semibold">Setor:</span> ${escapeHtml(message.seuSetor)}</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    messagesContainer.appendChild(messageCard);
+                });
+            } else {
+                messagesContainer.innerHTML = '<div class="col-span-full text-center py-8 text-lg">Nenhuma mensagem encontrada.</div>';
+            }
+        }
+        
+        // Função para filtrar mensagens por nome
+        function filterMessages() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            if (!searchTerm) {
+                displayMessages(allMessages);
+                return;
+            }
+            
+            const filteredMessages = allMessages.filter(message => {
+                return message.nomeColega.toLowerCase().includes(searchTerm) || 
+                       message.seuNomeCompleto.toLowerCase().includes(searchTerm);
+            });
+            
+            displayMessages(filteredMessages);
+        }
+        
+        // Função para atualizar estatísticas
+        function updateStatistics(messages) {
+            if (!messages || messages.length === 0) return;
+            
+            // Contar mensagens por setor (enviadas)
+            const senderSectors = {};
+            messages.forEach(message => {
+                const setor = message.seuSetor;
+                senderSectors[setor] = (senderSectors[setor] || 0) + 1;
+            });
+            
+            // Contar mensagens por setor (recebidas)
+            const receiverSectors = {};
+            messages.forEach(message => {
+                const setor = message.setorColega;
+                receiverSectors[setor] = (receiverSectors[setor] || 0) + 1;
+            });
+            
+            // Ordenar setores por contagem (enviadas)
+            const sortedSenderSectors = Object.entries(senderSectors)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 5); // Top 5
+            
+            // Ordenar setores por contagem (recebidas)
+            const sortedReceiverSectors = Object.entries(receiverSectors)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 5); // Top 5
+            
+            // Exibir estatísticas de envio
+            const topSenderSectorsContainer = document.getElementById('topSenderSectors');
+            topSenderSectorsContainer.innerHTML = '';
+            
+            sortedSenderSectors.forEach((item, index) => {
+                const [setor, count] = item;
+                const statsItem = document.createElement('div');
+                statsItem.className = 'stats-item';
+                statsItem.innerHTML = `
+                    <span class="stats-rank">${index + 1}. ${setor}</span>
+                    <span class="stats-count">${count} ${count === 1 ? 'mensagem' : 'mensagens'}</span>
+                `;
+                topSenderSectorsContainer.appendChild(statsItem);
+            });
+            
+            // Exibir estatísticas de recebimento
+            const topReceiverSectorsContainer = document.getElementById('topReceiverSectors');
+            topReceiverSectorsContainer.innerHTML = '';
+            
+            sortedReceiverSectors.forEach((item, index) => {
+                const [setor, count] = item;
+                const statsItem = document.createElement('div');
+                statsItem.className = 'stats-item';
+                statsItem.innerHTML = `
+                    <span class="stats-rank">${index + 1}. ${setor}</span>
+                    <span class="stats-count received">${count} ${count === 1 ? 'mensagem' : 'mensagens'}</span>
+                `;
+                topReceiverSectorsContainer.appendChild(statsItem);
+            });
+        }
+        
+        // Carregar mensagens quando a página é carregada
+        document.addEventListener('DOMContentLoaded', function() {
+            // Criar bandeirinhas de fundo
+            createBackgroundFlags();
+            
+            loadMessages();
+            
+            // Adicionar evento de busca
+            document.getElementById('searchInput').addEventListener('input', filterMessages);
+            
+            // Configurar o menu de navegação móvel
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Adicionar rolagem suave para os links de navegação
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Fechar o menu móvel se estiver aberto
+                    navMenu.classList.remove('active');
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70, // Ajuste para a altura da navegação
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Botão para atualizar mensagens
+        document.getElementById('loadMessages').addEventListener('click', loadMessages);
+        
+        // Form Submission usando fetch API
+        document.getElementById('messageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formStatus = document.getElementById('formStatus');
+            formStatus.className = 'mt-6 text-center';
+            formStatus.innerHTML = '<div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div> <span class="ml-2 text-lg">Enviando mensagem...</span>';
+            formStatus.classList.remove('hidden');
+            
+            // Capturar os dados do formulário
+            const formData = new FormData();
+            formData.append('seuNomeCompleto', document.getElementById('seuNomeCompleto').value);
+            formData.append('seuSetor', document.getElementById('seuSetor').value);
+            formData.append('nomeColega', document.getElementById('nomeColega').value);
+            formData.append('setorColega', document.getElementById('setorColega').value);
+            formData.append('mensagem', document.getElementById('mensagem').value);
+            
+            // Enviar os dados usando fetch
+            fetch(scriptURL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Importante para evitar problemas de CORS com o Google Apps Script
+            })
+            .then(() => {
+                // Criar um objeto com os dados do formulário para exibição local
+                const messageData = {
+                    seuNomeCompleto: document.getElementById('seuNomeCompleto').value,
+                    seuSetor: document.getElementById('seuSetor').value,
+                    nomeColega: document.getElementById('nomeColega').value,
+                    setorColega: document.getElementById('setorColega').value,
+                    mensagem: document.getElementById('mensagem').value
+                };
+                
+                // Adicionar a nova mensagem à exibição
+                const messagesContainer = document.getElementById('messagesContainer');
+                const messageCard = document.createElement('div');
+                messageCard.className = 'message-card p-6';
+                
+                const randomColor = getRandomColor();
+                messageCard.style.borderLeft = `5px solid ${randomColor}`;
+                
+                messageCard.innerHTML = `
+                    <div class="mb-4">
+                        <p class="message-text font-medium">${escapeHtml(messageData.mensagem)}</p>
+                    </div>
+                    <div class="flex flex-col space-y-2">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <p class="text-sm"><span class="font-semibold">Para:</span> ${escapeHtml(messageData.nomeColega)}</p>
+                            <p class="text-sm"><span class="font-semibold">Setor:</span> ${escapeHtml(messageData.setorColega)}</p>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <p class="text-sm"><span class="font-semibold">De:</span> ${escapeHtml(messageData.seuNomeCompleto)}</p>
+                            <p class="text-sm"><span class="font-semibold">Setor:</span> ${escapeHtml(messageData.seuSetor)}</p>
+                        </div>
+                    </div>
+                `;
+                
+                // Adicionar a nova mensagem no topo da lista
+                if (messagesContainer.firstChild) {
+                    messagesContainer.insertBefore(messageCard, messagesContainer.firstChild);
+                } else {
+                    messagesContainer.appendChild(messageCard);
+                }
+                
+                // Adicionar a nova mensagem ao array global
+                allMessages.unshift(messageData);
+                
+                // Atualizar o contador de mensagens
+                updateMessageCounter(allMessages.length);
+                
+                // Atualizar estatísticas
+                updateStatistics(allMessages);
+                
+                formStatus.innerHTML = '<div class="bg-green-100 text-green-800 p-4 rounded-xl text-lg">Mensagem enviada com sucesso!</div>';
+                document.getElementById('messageForm').reset();
+                
+                // Limpar mensagem de sucesso após 5 segundos
+                setTimeout(() => {
+                    formStatus.classList.add('hidden');
+                }, 5000);
+                
+                // Recarregar todas as mensagens após um pequeno atraso para garantir que a nova mensagem seja incluída
+                setTimeout(() => {
+                    loadMessages();
+                }, 2000);
+            })
+            .catch(error => {
+                formStatus.innerHTML = '<div class="bg-red-100 text-red-800 p-4 rounded-xl text-lg">Erro ao enviar mensagem. Por favor, tente novamente.</div>';
+                console.error('Erro:', error);
+            });
+        });
+        
+        // Helper functions
+        function getRandomColor() {
+            const colors = [
+                '#E53935', '#43A047', '#FDD835', '#1E88E5', 
+                '#8E24AA', '#FB8C00', '#EC407A', '#00ACC1'
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+        
+        function escapeHtml(unsafe) {
+            if (!unsafe) return '';
+            return unsafe
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+        
+        // Função para destacar termos de pesquisa
+        function highlightSearchTerm(text, term) {
+            if (!term) return text;
+            
+            const regex = new RegExp(`(${term})`, 'gi');
+            return text.replace(regex, '<span class="highlight">$1</span>');
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'94db50f19343fd72',t:'MTc0OTU4NDE3MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
